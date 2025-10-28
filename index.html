@@ -394,7 +394,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="mailto:polina.simenko@gmail.com" method="post" enctype="text/plain">
+                    <form id="contactForm">
                         <div class="name-fields">
                             <div class="form-group">
                                 <label for="firstName">Ім'я (обов'язково)</label>
@@ -458,7 +458,7 @@
         }
 
         // Обробка форми
-        const contactForm = document.querySelector('.contact-form form');
+        const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
