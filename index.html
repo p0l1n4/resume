@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ім'я Прізвище | Дизайнер & Розробник</title>
+    <title>Сіменко Поліна | Студентка Інформаційних систем</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Глобальні стилі як на erikkindel.com */
+        /* Кольори як на kristinachampion.com */
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #ffffff;
-            --accent-color: #ff3366;
-            --secondary-text: #888888;
-            --border-color: #333333;
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #0066cc;
+            --secondary-color: #66ccff;
+            --light-gray: #f5f5f5;
+            --border-color: #e0e0e0;
+            --secondary-text: #666666;
         }
         
         * {
@@ -27,7 +29,6 @@
             color: var(--text-color);
             line-height: 1.6;
             font-weight: 300;
-            overflow-x: hidden;
         }
         
         html {
@@ -45,10 +46,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 30px 0;
+            padding: 25px 0;
             z-index: 1000;
-            background-color: rgba(10, 10, 10, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
         }
         
         nav {
@@ -59,8 +61,8 @@
         
         .logo {
             font-size: 18px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
         
         .logo a {
@@ -78,8 +80,7 @@
             color: var(--text-color);
             text-decoration: none;
             font-size: 14px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
+            font-weight: 400;
             transition: color 0.3s ease;
         }
         
@@ -98,7 +99,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 100px 0 50px;
+            padding: 120px 0 60px;
         }
         
         .hero-content {
@@ -106,11 +107,10 @@
         }
         
         .hero h1 {
-            font-size: clamp(36px, 6vw, 64px);
+            font-size: clamp(32px, 5vw, 56px);
             font-weight: 400;
             line-height: 1.1;
             margin-bottom: 20px;
-            letter-spacing: -1px;
         }
         
         .hero p {
@@ -124,23 +124,22 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            color: var(--text-color);
+            color: var(--accent-color);
             text-decoration: none;
             font-size: 16px;
+            font-weight: 500;
             padding: 12px 0;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid transparent;
             transition: all 0.3s ease;
         }
         
         .btn:hover {
             border-bottom-color: var(--accent-color);
-            color: var(--accent-color);
         }
         
-        /* Про мене */
-        .about {
-            padding: 120px 0;
-            border-top: 1px solid var(--border-color);
+        /* Секції */
+        section {
+            padding: 100px 0;
         }
         
         .section-header {
@@ -152,7 +151,7 @@
         
         .section-title {
             font-size: 14px;
-            font-weight: 400;
+            font-weight: 500;
             color: var(--secondary-text);
             letter-spacing: 1px;
             min-width: 150px;
@@ -162,10 +161,15 @@
             flex: 1;
         }
         
+        /* Про мене */
+        .about {
+            border-top: 1px solid var(--border-color);
+        }
+        
         .about-text {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 300;
-            line-height: 1.3;
+            line-height: 1.4;
             margin-bottom: 40px;
             max-width: 700px;
         }
@@ -179,19 +183,19 @@
         
         .detail-item h3 {
             font-size: 16px;
-            font-weight: 400;
+            font-weight: 500;
             margin-bottom: 10px;
             color: var(--secondary-text);
         }
         
         .detail-item p {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 300;
         }
         
         /* Навички */
         .skills {
-            padding: 120px 0;
+            background-color: var(--light-gray);
             border-top: 1px solid var(--border-color);
         }
         
@@ -203,8 +207,9 @@
         
         .skill-category h3 {
             font-size: 18px;
-            font-weight: 400;
+            font-weight: 500;
             margin-bottom: 30px;
+            color: var(--accent-color);
         }
         
         .skill-list {
@@ -212,7 +217,7 @@
         }
         
         .skill-list li {
-            padding: 15px 0;
+            padding: 12px 0;
             border-bottom: 1px solid var(--border-color);
             font-size: 16px;
             font-weight: 300;
@@ -232,14 +237,13 @@
         
         /* Досвід */
         .experience {
-            padding: 120px 0;
             border-top: 1px solid var(--border-color);
         }
         
         .timeline {
             display: flex;
             flex-direction: column;
-            gap: 60px;
+            gap: 50px;
         }
         
         .timeline-item {
@@ -251,6 +255,7 @@
             min-width: 150px;
             font-size: 14px;
             color: var(--secondary-text);
+            font-weight: 400;
         }
         
         .timeline-content {
@@ -258,26 +263,27 @@
         }
         
         .timeline-content h3 {
-            font-size: 20px;
-            font-weight: 400;
-            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
         }
         
         .timeline-content .company {
             font-size: 16px;
-            color: var(--secondary-text);
-            margin-bottom: 15px;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            font-weight: 400;
         }
         
         .timeline-content p {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--secondary-text);
             line-height: 1.6;
         }
         
         /* Проекти */
         .projects {
-            padding: 120px 0;
+            background-color: var(--light-gray);
             border-top: 1px solid var(--border-color);
         }
         
@@ -288,6 +294,7 @@
         }
         
         .project-card {
+            background-color: var(--bg-color);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             overflow: hidden;
@@ -297,11 +304,12 @@
         .project-card:hover {
             border-color: var(--accent-color);
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .project-image {
-            height: 250px;
-            background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+            height: 200px;
+            background: linear-gradient(45deg, var(--light-gray), var(--border-color));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -310,19 +318,19 @@
         }
         
         .project-content {
-            padding: 30px;
+            padding: 25px;
         }
         
         .project-content h3 {
-            font-size: 20px;
-            font-weight: 400;
+            font-size: 18px;
+            font-weight: 500;
             margin-bottom: 10px;
         }
         
         .project-content p {
             font-size: 14px;
             color: var(--secondary-text);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             line-height: 1.5;
         }
         
@@ -333,7 +341,7 @@
         }
         
         .tag {
-            background-color: #1a1a1a;
+            background-color: var(--light-gray);
             color: var(--secondary-text);
             padding: 4px 12px;
             border-radius: 20px;
@@ -343,7 +351,6 @@
         
         /* Контакти */
         .contact {
-            padding: 120px 0;
             border-top: 1px solid var(--border-color);
         }
         
@@ -357,21 +364,21 @@
         }
         
         .contact-text {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 300;
-            line-height: 1.3;
-            margin-bottom: 40px;
-            max-width: 500px;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            max-width: 400px;
         }
         
         .social-links {
             display: flex;
             gap: 20px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
         
         .social-link {
-            color: var(--text-color);
+            color: var(--accent-color);
             text-decoration: none;
             font-size: 14px;
             padding: 8px 0;
@@ -381,7 +388,6 @@
         
         .social-link:hover {
             border-bottom-color: var(--accent-color);
-            color: var(--accent-color);
         }
         
         .contact-form {
@@ -389,7 +395,7 @@
         }
         
         .form-group {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .form-group label {
@@ -425,38 +431,39 @@
         
         .submit-btn {
             background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
             padding: 12px 30px;
             font-size: 14px;
             cursor: pointer;
             transition: all 0.3s ease;
             border-radius: 4px;
+            font-weight: 500;
         }
         
         .submit-btn:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
+            background-color: var(--accent-color);
+            color: white;
         }
         
         /* Футер */
         footer {
-            padding: 60px 0;
+            padding: 50px 0;
             border-top: 1px solid var(--border-color);
             text-align: center;
+            background-color: var(--light-gray);
         }
         
         .footer-content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
         }
         
         .footer-logo {
             font-size: 18px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-weight: 500;
         }
         
         .footer-links {
@@ -494,12 +501,12 @@
             
             .about-text,
             .contact-text {
-                font-size: 28px;
+                font-size: 24px;
             }
             
             .timeline-item {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
             }
             
             .contact-content {
@@ -515,10 +522,10 @@
             
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: calc(100vh - 70px);
                 background-color: var(--bg-color);
                 flex-direction: column;
                 align-items: center;
@@ -526,6 +533,7 @@
                 padding-top: 50px;
                 gap: 30px;
                 transition: left 0.3s ease;
+                border-top: 1px solid var(--border-color);
             }
             
             .nav-links.active {
@@ -548,7 +556,7 @@
             }
             
             .hero {
-                padding: 120px 0 50px;
+                padding: 100px 0 40px;
             }
             
             .about,
@@ -556,12 +564,12 @@
             .experience,
             .projects,
             .contact {
-                padding: 80px 0;
+                padding: 70px 0;
             }
             
             .about-text,
             .contact-text {
-                font-size: 24px;
+                font-size: 22px;
             }
             
             .about-details {
@@ -576,7 +584,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <a href="#">Ім'я Прізвище</a>
+                    <a href="#">Сіменко Поліна</a>
                 </div>
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
@@ -596,10 +604,10 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Дизайнер & Розробник з фокусом на креативних рішеннях</h1>
-                <p>Створюю унікальні цифрові досвіди, що поєднують естетику та функціональність.</p>
+                <h1>Студентка Інформаційних систем & Творча особистість</h1>
+                <p>Поєдную технічну освіту з креативним мисленням та практичним досвідом у бізнес-процесах</p>
                 <a href="#projects" class="btn">
-                    Переглянути роботи
+                    Дивитися проекти
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -612,19 +620,20 @@
             <div class="section-header">
                 <div class="section-title">ПРО МЕНЕ</div>
                 <div class="section-content">
-                    <p class="about-text">Я дизайнер та розробник з більш ніж 5-річним досвідом створення цифрових продуктів, що поєднують красу та технології.</p>
+                    <p class="about-text">Я студентка з багатогранними інтересами - від програмування та математичної логіки до дизайну та моди. Шукаю баланс між технічним та творчим.</p>
                     <div class="about-details">
                         <div class="detail-item">
                             <h3>СПЕЦІАЛІЗАЦІЯ</h3>
-                            <p>UI/UX Дизайн<br>Веб-розробка<br>Брендинг</p>
+                            <p>Веб-розробка<br>Аналіз даних<br>UI/UX Дизайн</p>
                         </div>
                         <div class="detail-item">
                             <h3>ОСВІТА</h3>
-                            <p>Бакалавр Дизайну<br>Університет Мистецтв<br>2015-2019</p>
+                            <p>КПІ ім. Сікорського<br>Прикладна математика<br>2020-2022</p>
+                            <p style="margin-top: 10px;">Херсонський ДУ<br>Інформаційні системи<br>2023-2027</p>
                         </div>
                         <div class="detail-item">
-                            <h3>НАГОРОДИ</h3>
-                            <p>Awwwards x2<br>CSS Design Awards<br>Behance Feature</p>
+                            <h3>ІНТЕРЕСИ</h3>
+                            <p>Математична логіка<br>Дизайн & Мода<br>Іноземні мови</p>
                         </div>
                     </div>
                 </div>
@@ -640,30 +649,31 @@
                 <div class="section-content">
                     <div class="skills-grid">
                         <div class="skill-category">
-                            <h3>Дизайн</h3>
+                            <h3>Технічні</h3>
                             <ul class="skill-list">
-                                <li>UI/UX Дизайн <span class="skill-level">Експерт</span></li>
-                                <li>Продуктовий Дизайн <span class="skill-level">Експерт</span></li>
-                                <li>Брендинг <span class="skill-level">Просунутий</span></li>
-                                <li>Ілюстрація <span class="skill-level">Просунутий</span></li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Розробка</h3>
-                            <ul class="skill-list">
-                                <li>HTML/CSS <span class="skill-level">Експерт</span></li>
-                                <li>JavaScript <span class="skill-level">Просунутий</span></li>
-                                <li>React <span class="skill-level">Просунутий</span></li>
-                                <li>Node.js <span class="skill-level">Середній</span></li>
+                                <li>HTML/CSS <span class="skill-level">Базовий</span></li>
+                                <li>Python <span class="skill-level">Базовий</span></li>
+                                <li>C++ <span class="skill-level">Базовий</span></li>
+                                <li>SQL <span class="skill-level">Базовий</span></li>
+                                <li>R <span class="skill-level">Базовий</span></li>
                             </ul>
                         </div>
                         <div class="skill-category">
                             <h3>Інструменти</h3>
                             <ul class="skill-list">
-                                <li>Figma <span class="skill-level">Експерт</span></li>
-                                <li>Adobe Creative Suite <span class="skill-level">Експерт</span></li>
-                                <li>Webflow <span class="skill-level">Просунутий</span></li>
-                                <li>Git <span class="skill-level">Просунутий</span></li>
+                                <li>Figma <span class="skill-level">Базовий</span></li>
+                                <li>WordPress <span class="skill-level">Базовий</span></li>
+                                <li>CRM системи <span class="skill-level">Досвідчений</span></li>
+                                <li>Google Workspace <span class="skill-level">Досвідчений</span></li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Професійні</h3>
+                            <ul class="skill-list">
+                                <li>Управління проектами <span class="skill-level">Досвідчений</span></li>
+                                <li>Бізнес-аналітика <span class="skill-level">Досвідчений</span></li>
+                                <li>Англійська B1/B2 <span class="skill-level">Досвідчений</span></li>
+                                <li>Ділова комунікація <span class="skill-level">Досвідчений</span></li>
                             </ul>
                         </div>
                     </div>
@@ -680,27 +690,19 @@
                 <div class="section-content">
                     <div class="timeline">
                         <div class="timeline-item">
-                            <div class="timeline-date">2021 - До тепер</div>
+                            <div class="timeline-date">2022 - До тепер</div>
                             <div class="timeline-content">
-                                <h3>Старший Продуктовий Дизайнер</h3>
-                                <div class="company">TechCorp Inc.</div>
-                                <p>Керівництво дизайн-командою, розробка дизайн-систем, створення UX стратегій для мобільних та веб-продуктів.</p>
+                                <h3>Менеджер з продажів</h3>
+                                <div class="company">MFT</div>
+                                <p>Робота з клієнтами, ведення продажів через CRM систему, контроль бізнес-процесів, аналітика даних, підготовка звітів, координація логістики.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-date">2019 - 2021</div>
+                            <div class="timeline-date">2020 - 2022</div>
                             <div class="timeline-content">
-                                <h3>UI/UX Дизайнер</h3>
-                                <div class="company">Digital Studio</div>
-                                <p>Створення інтерфейсів для клієнтів з різних індустрій, проведення користувацьких досліджень, прототипування.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2017 - 2019</div>
-                            <div class="timeline-content">
-                                <h3>Веб-Дизайнер</h3>
-                                <div class="company">Creative Agency</div>
-                                <p>Розробка веб-сайтів, створення графічного контенту, участь у повному циклі розробки проектів.</p>
+                                <h3>Студентка</h3>
+                                <div class="company">КПІ ім. Сікорського</div>
+                                <p>Вивчення прикладної математики, програмування на C++ та Python, математичної логіки, дискретної математики. Участь у наукових проектах.</p>
                             </div>
                         </div>
                     </div>
@@ -718,43 +720,43 @@
                     <div class="projects-grid">
                         <div class="project-card">
                             <div class="project-image">
-                                [Зображення проекту]
+                                [Навчальний проект]
                             </div>
                             <div class="project-content">
-                                <h3>Екосистема Фінтех</h3>
-                                <p>Повний редизайн фінтех платформи з акцентом на користувацький досвід та доступність.</p>
+                                <h3>База даних для бізнесу</h3>
+                                <p>Розробка концепції бази даних для управління бізнес-процесами з використанням SQL.</p>
                                 <div class="project-tags">
-                                    <span class="tag">UI/UX</span>
-                                    <span class="tag">Продуктовий Дизайн</span>
-                                    <span class="tag">Figma</span>
+                                    <span class="tag">SQL</span>
+                                    <span class="tag">Аналітика</span>
+                                    <span class="tag">Бізнес-процеси</span>
                                 </div>
                             </div>
                         </div>
                         <div class="project-card">
                             <div class="project-image">
-                                [Зображення проекту]
+                                [Навчальний проект]
                             </div>
                             <div class="project-content">
-                                <h3>Арт-Платформа</h3>
-                                <p>Інтерактивна платформа для митців з функціями співпраці та продажу творів мистецтва.</p>
+                                <h3>Веб-сайт на WordPress</h3>
+                                <p>Створення та налаштування веб-сайту з використанням CMS WordPress.</p>
                                 <div class="project-tags">
+                                    <span class="tag">WordPress</span>
                                     <span class="tag">Веб-розробка</span>
-                                    <span class="tag">React</span>
-                                    <span class="tag">Node.js</span>
+                                    <span class="tag">UI/UX</span>
                                 </div>
                             </div>
                         </div>
                         <div class="project-card">
                             <div class="project-image">
-                                [Зображення проекту]
+                                [Навчальний проект]
                             </div>
                             <div class="project-content">
-                                <h3>Бренд Ідентичність</h3>
-                                <p>Розробка повного брендбуту для стартапу в сфері охорони здоров'я.</p>
+                                <h3>Аналіз даних в R</h3>
+                                <p>Статистичний аналіз та візуалізація даних з використанням мови програмування R.</p>
                                 <div class="project-tags">
-                                    <span class="tag">Брендинг</span>
-                                    <span class="tag">Ілюстрація</span>
-                                    <span class="tag">Айдентика</span>
+                                    <span class="tag">R</span>
+                                    <span class="tag">Аналітика</span>
+                                    <span class="tag">Візуалізація</span>
                                 </div>
                             </div>
                         </div>
@@ -772,28 +774,27 @@
                 <div class="section-content">
                     <div class="contact-content">
                         <div class="contact-info">
-                            <p class="contact-text">Давайте створимо щось разом.</p>
-                            <p>Зв'яжіться зі мною для обговорення ваших проектів та ідей.</p>
+                            <p class="contact-text">Давайте співпрацювати!</p>
+                            <p>Я відкрита до нових знайомств та можливостей для розвитку.</p>
                             <div class="social-links">
-                                <a href="#" class="social-link">Email</a>
-                                <a href="#" class="social-link">LinkedIn</a>
-                                <a href="#" class="social-link">Dribbble</a>
-                                <a href="#" class="social-link">Instagram</a>
+                                <a href="https://github.com/p0l1n4" class="social-link">GitHub</a>
+                                <a href="https://www.instagram.com/polline_ko/" class="social-link">Instagram</a>
+                                <a href="mailto:polina.simenko@gmail.com" class="social-link">Email</a>
                             </div>
                         </div>
                         <div class="contact-form">
-                            <form>
+                            <form action="mailto:polina.simenko@gmail.com" method="post" enctype="text/plain">
                                 <div class="form-group">
                                     <label for="name">Ім'я</label>
-                                    <input type="text" id="name" required>
+                                    <input type="text" id="name" name="name" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" required>
+                                    <input type="email" id="email" name="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="message">Повідомлення</label>
-                                    <textarea id="message" required></textarea>
+                                    <textarea id="message" name="message" required></textarea>
                                 </div>
                                 <button type="submit" class="submit-btn">Надіслати повідомлення</button>
                             </form>
@@ -808,7 +809,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Ім'я Прізвище</div>
+                <div class="footer-logo">Сіменко Поліна</div>
                 <ul class="footer-links">
                     <li><a href="#about">Про мене</a></li>
                     <li><a href="#skills">Навички</a></li>
@@ -816,7 +817,7 @@
                     <li><a href="#projects">Проекти</a></li>
                     <li><a href="#contact">Контакти</a></li>
                 </ul>
-                <div class="copyright">© 2023 Всі права захищені</div>
+                <div class="copyright">© 2024 Всі права захищені</div>
             </div>
         </div>
     </footer>
@@ -835,6 +836,14 @@
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
+        });
+
+        // Обробка форми
+        const contactForm = document.querySelector('.contact-form form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Дякую за повідомлення! Я з вами зв\'яжуся.');
+            this.reset();
         });
     </script>
 </body>
