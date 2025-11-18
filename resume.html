@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume | Polina Simenko </title>
+    <title>Resume | Polina Simenko</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #ffffff;
-            --accent-color: #ff3366;
-            --secondary-text: #888888;
-            --border-color: #333333;
+            --bg-color: #fff5f7;
+            --bg-gradient: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+            --text-color: #5a3d4e;
+            --accent-color: #e6a4b4;
+            --accent-dark: #c86b85;
+            --secondary-text: #8a6b7a;
+            --border-color: #f0d4dc;
+            --card-bg: rgba(255, 255, 255, 0.8);
         }
         
         * {
@@ -21,11 +25,11 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--bg-color);
+            font-family: 'Crimson Text', serif;
+            background: var(--bg-gradient);
             color: var(--text-color);
             line-height: 1.6;
-            font-weight: 300;
+            font-weight: 400;
             overflow-x: hidden;
         }
         
@@ -42,7 +46,7 @@
             width: 100%;
             padding: 30px 0;
             z-index: 1000;
-            background-color: rgba(10, 10, 10, 0.9);
+            background-color: rgba(255, 245, 247, 0.9);
             backdrop-filter: blur(10px);
         }
         
@@ -53,8 +57,9 @@
         }
         
         .logo {
-            font-size: 18px;
-            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
             letter-spacing: 1px;
         }
         
@@ -72,14 +77,30 @@
         .nav-links a {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 300;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
         }
         
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--accent-dark);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
         }
         
         .menu-toggle {
@@ -102,7 +123,7 @@
         
         .btn:hover {
             border-bottom-color: var(--accent-color);
-            color: var(--accent-color);
+            color: var(--accent-dark);
         }
         
         /* Сторінка Резюме */
@@ -116,20 +137,22 @@
         }
         
         .page-title {
-            font-size: clamp(36px, 6vw, 64px);
-            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 72px);
+            font-weight: 500;
             line-height: 1.1;
             margin-bottom: 20px;
         }
         
         .page-subtitle {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--secondary-text);
             max-width: 600px;
+            font-style: italic;
         }
         
         .page-content {
-            max-width: 800px;
+            max-width: 900px;
         }
         
         .page-section {
@@ -137,15 +160,16 @@
         }
         
         .page-section h2 {
-            font-size: 24px;
-            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 500;
             margin-bottom: 30px;
             padding-bottom: 10px;
             border-bottom: 1px solid var(--border-color);
         }
         
         .page-section p {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.7;
             margin-bottom: 20px;
             color: var(--secondary-text);
@@ -166,7 +190,7 @@
         
         .back-link:hover {
             border-bottom-color: var(--accent-color);
-            color: var(--accent-color);
+            color: var(--accent-dark);
         }
         
         /* Специфічні стилі для резюме */
@@ -176,6 +200,11 @@
         
         .resume-item {
             margin-bottom: 30px;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px rgba(230, 164, 180, 0.1);
         }
         
         .resume-item-header {
@@ -186,19 +215,24 @@
         }
         
         .resume-item-title {
-            font-size: 20px;
-            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
         }
         
         .resume-item-date {
-            color: var(--secondary-text);
-            font-size: 14px;
+            color: var(--accent-dark);
+            font-size: 16px;
+            background: rgba(230, 164, 180, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
         }
         
         .resume-item-subtitle {
-            color: var(--secondary-text);
-            font-size: 16px;
+            color: var(--accent-dark);
+            font-size: 18px;
             margin-bottom: 10px;
+            font-style: italic;
         }
         
         .resume-item-description {
@@ -206,286 +240,4 @@
             line-height: 1.6;
         }
         
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            list-style: none;
-        }
-        
-        .skills-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            padding: 12px 24px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-            text-decoration: none;
-            margin-top: 20px;
-        }
-        
-        .download-btn:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-        }
-        
-        /* Футер */
-        footer {
-            padding: 60px 0;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-        
-        .footer-logo {
-            font-size: 18px;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        
-        .footer-links a {
-            color: var(--secondary-text);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent-color);
-        }
-        
-        .copyright {
-            color: var(--secondary-text);
-            font-size: 14px;
-        }
-        
-        /* Адаптивність */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--bg-color);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 50px;
-                gap: 30px;
-                transition: left 0.3s ease;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .resume-item-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            .page {
-                padding: 120px 0 60px;
-            }
-            
-            .skills-list {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Хедер -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <a href="index.html">Polina Simenko</a>
-                </div>
-                <div class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="index.html#contact">Contacts</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Сторінка Резюме -->
-    <main class="page">
-        <div class="container">
-            <a href="index.html" class="back-link">
-                <i class="fas fa-arrow-left"></i>
-                Main
-            </a>
-            
-            <div class="page-header">
-                <h1 class="page-title">Resume</h1>
-                <p class="page-subtitle">Мій професійний досвід, навички та освіта</p>
-                <a href="#" class="download-btn">
-                    <i class="fas fa-download"></i>
-                    Завантажити PDF
-                </a>
-            </div>
-            
-            <div class="page-content">
-                <div class="resume-section">
-                    <h2>Досвід роботи</h2>
-                    
-                    <div class="resume-item">
-                        <div class="resume-item-header">
-                            <h3 class="resume-item-title">Менеджер з продажів</h3>
-                            <span class="resume-item-date">2024 - now</span>
-                        </div>
-                        <div class="resume-item-subtitle">MFT</div>
-                        <div class="resume-item-description">
-                            <p>Комунікація з клієнтами, ведення продажів, налаштування CRM системи, контроль бізнес-процесів, аналітика даних, підготовка звітів, координація замовлень.</p>
-                            <p>Покращення ефективності робочих процесів за допомогою автоматизації та оптимізації.</p>
-                        </div>
-                    </div>
-                                                       
-                <div class="resume-section">
-                    <h2>Освіта</h2>
-                    
-                    <div class="resume-item">
-                        <div class="resume-item-header">
-                            <h3 class="resume-item-title">Інформаційні системи та технології</h3>
-                            <span class="resume-item-date">2023 - 2027</span>
-                        </div>
-                        <div class="resume-item-subtitle">Херсонський державний університет</div>
-                        <div class="resume-item-description">
-                            <p>Спеціальність: Інформаційні системи та технології</p>
-                            <p>Напрямок: проектування та розробка інформаційних систем, бази даних, веб-технології, управління IT-проектами.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="resume-item">
-                        <div class="resume-item-header">
-                            <h3 class="resume-item-title">Прикладна математика</h3>
-                            <span class="resume-item-date">2020 - 2022</span>
-                        </div>
-                        <div class="resume-item-subtitle">КПІ ім. Сікорського</div>
-                        <div class="resume-item-description">
-                            <p>Спеціальність: Прикладна математика</p>
-                            <p>Вивчення математичного аналізу, алгебри, дискретної математики, теорії ймовірностей, математичної логіки та програмування. Участь у наукових проектах та дослідженнях в галузі прикладної математики. </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="resume-section">
-                    <h2>Навички</h2>
-                    
-                    <div class="resume-item">
-                        <h3>Технічні навички</h3>
-                        <ul class="skills-list">
-                            <li>HTML/CSS</li>
-                            <li>Python</li>
-                            <li>C++</li>
-                            <li>SQL</li>
-                            <li>R</li>
-                            <li>Figma</li>
-                            <li>WordPress</li>
-                            <li>Bizagi</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resume-item">
-                        <h3>Професійні навички</h3>
-                        <ul class="skills-list">
-                            <li>Робота в CRM</li>
-                            <li>Управління проектами</li>
-                            <li>Бізнес-аналітика</li>
-                            <li>Ділова комунікація</li>
-                            <li>Аналіз даних</li>
-                            <li>Ведення звітності</li>
-                            <li>Планування та організація</li>
-                            <li>Робота в команді</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resume-item">
-                        <h3>Мови</h3>
-                        <ul class="skills-list">
-                            <li>Українська - рідна</li>
-                            <li>Англійська - B1/B2</li>
-                            <li>Японська - початковий рівень</li>
-                            <li>Французька - початковий рівень</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Футер -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Polina Simenko</div>
-                <ul class="footer-links">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resume.html">Resumne</a></li>
-                    <li><a href="index.html#contact">Contacts</a></li>
-                </ul>
-                <div class="copyright">© 2025 All rights</div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Меню для мобільних пристроїв
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-            
-            // Закриття меню при кліку на посилання
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                });
-            });
-        }
-    </script>
-</body>
-</html>
+        .
