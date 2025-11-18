@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Polina Simenko</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #ffffff;
-            --accent-color: #ff3366;
-            --secondary-text: #888888;
-            --border-color: #333333;
+            --bg-color: #fff5f7;
+            --bg-gradient: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+            --text-color: #5a3d4e;
+            --accent-color: #e6a4b4;
+            --accent-dark: #c86b85;
+            --secondary-text: #8a6b7a;
+            --border-color: #f0d4dc;
+            --card-bg: rgba(255, 255, 255, 0.8);
         }
         
         * {
@@ -21,11 +25,11 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--bg-color);
+            font-family: 'Crimson Text', serif;
+            background: var(--bg-gradient);
             color: var(--text-color);
             line-height: 1.6;
-            font-weight: 300;
+            font-weight: 400;
             overflow-x: hidden;
         }
         
@@ -42,7 +46,7 @@
             width: 100%;
             padding: 30px 0;
             z-index: 1000;
-            background-color: rgba(10, 10, 10, 0.9);
+            background-color: rgba(255, 245, 247, 0.9);
             backdrop-filter: blur(10px);
         }
         
@@ -53,8 +57,9 @@
         }
         
         .logo {
-            font-size: 18px;
-            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
             letter-spacing: 1px;
         }
         
@@ -72,14 +77,30 @@
         .nav-links a {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 300;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
         }
         
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--accent-dark);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
         }
         
         .menu-toggle {
@@ -102,7 +123,7 @@
         
         .btn:hover {
             border-bottom-color: var(--accent-color);
-            color: var(--accent-color);
+            color: var(--accent-dark);
         }
         
         /* Сторінка Про мене */
@@ -123,6 +144,7 @@
             object-fit: cover;
             margin: 30px 0;
             border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(230, 164, 180, 0.2);
         }
 
         .photo-left {
@@ -141,40 +163,20 @@
             display: block;
             margin: 40px auto;
         }
-
-        /* Адаптивність для фото */
-        @media (max-width: 768px) {
-            .about-photo {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .photo-left,
-            .photo-right {
-                float: none;
-                margin: 30px auto;
-                display: block;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .about-photo {
-                width: 200px;
-                height: 200px;
-            }
-        }
         
         .page-title {
-            font-size: clamp(36px, 6vw, 64px);
-            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 72px);
+            font-weight: 500;
             line-height: 1.1;
             margin-bottom: 20px;
         }
         
         .page-subtitle {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--secondary-text);
             max-width: 600px;
+            font-style: italic;
         }
         
         .page-content {
@@ -183,18 +185,20 @@
         
         .page-section {
             margin-bottom: 60px;
+            position: relative;
         }
         
         .page-section h2 {
-            font-size: 24px;
-            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 500;
             margin-bottom: 30px;
             padding-bottom: 10px;
             border-bottom: 1px solid var(--border-color);
         }
         
         .page-section p {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.7;
             margin-bottom: 20px;
             color: var(--secondary-text);
@@ -215,7 +219,12 @@
         
         .back-link:hover {
             border-bottom-color: var(--accent-color);
+            color: var(--accent-dark);
+        }
+        
+        .floral-icon {
             color: var(--accent-color);
+            margin-right: 10px;
         }
         
         /* Футер */
@@ -233,6 +242,7 @@
         }
         
         .footer-logo {
+            font-family: 'Playfair Display', serif;
             font-size: 18px;
             font-weight: 400;
             letter-spacing: 1px;
@@ -252,12 +262,34 @@
         }
         
         .footer-links a:hover {
-            color: var(--accent-color);
+            color: var(--accent-dark);
         }
         
         .copyright {
             color: var(--secondary-text);
             font-size: 14px;
+        }
+        
+        /* Адаптивність для фото */
+        @media (max-width: 768px) {
+            .about-photo {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .photo-left,
+            .photo-right {
+                float: none;
+                margin: 30px auto;
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-photo {
+                width: 200px;
+                height: 200px;
+            }
         }
         
         /* Адаптивність */
@@ -322,33 +354,33 @@
         <div class="container">
             <a href="index.html" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                Main
+                Back to Main
             </a>
             
             <div class="page-header">
-                <h1 class="page-title">About</h1>
-                <p class="page-subtitle">Детальніше про мої інтереси, освіту та плани на майбутнє</p>
+                <h1 class="page-title">About Me</h1>
+                <p class="page-subtitle">Discover my interests, education journey, and future aspirations</p>
             </div>
             
             <div class="page-content">
                 <div class="page-section">
-                    <h2>I am Polina Simenko</h2>
+                    <h2><i class="fas fa-user floral-icon"></i>My Journey</h2>
                     <img src="polina_s.jpg" alt="Поліна Сіменко" class="about-photo photo-right">
-                    <p>Я студентка 3 курсу Херсонського державного університету за спеціальністю "Інформаційні системи та технології". Освітня подорож почалася в КПІ ім. Сікорського, де я вивчала прикладну математику, яка вплинула на розвиток статистичного мислення.</p>
-                    <p>Зараз я поєдную навчання з роботою менеджером з продажів, де застосовую аналітичні здібності для покращення бізнес-процесів та взаємодії з клієнтами.</p>
+                    <p>I'm a 3rd-year student at Kherson State University, majoring in Information Systems and Technologies. My educational journey began at Igor Sikorsky Kyiv Polytechnic Institute, where I studied Applied Mathematics, which significantly developed my statistical thinking and analytical approach.</p>
+                    <p>Currently, I'm balancing my studies with work as a Sales Manager, where I apply my analytical skills to improve business processes and enhance customer interactions.</p>
                 </div>
                 
                 <div class="page-section">
-                    <h2>Interests</h2>
-                    <p>Окрім технічних аспектів, я захоплююсь дизайном та модою. Мені подобається аналізувати тенденції, експериментувати зі стилями та створювати естетично привабливі рішення. Це допомагає мені розвивати творче мислення, яке я можу застосовувати в своїй технічній роботі (наприклад, UI/UX design).</p>
-                    <p>Також я вивчаю іноземні мови - англійську, японську та французьку. Мови це розширення кругозору та можливість краще розуміти інші культури, людей та способи мислення.</p>
-                    <p>Математична логіка та криптографія - ще одна сфера моїх інтересів. Мені подобається розгадувати складні завдання та аналізувати алгоритми, що робить роботу в IT ще цікавішою.</p>
+                    <h2><i class="fas fa-heart floral-icon"></i>Interests & Passions</h2>
+                    <p>Beyond technical aspects, I have a deep passion for design and fashion. I enjoy analyzing trends, experimenting with styles, and creating aesthetically pleasing solutions. This helps me develop creative thinking that I can apply to my technical work, particularly in UI/UX design.</p>
+                    <p>I'm also dedicated to learning foreign languages - English, Japanese, and French. Languages represent an expansion of horizons and an opportunity to better understand different cultures, people, and ways of thinking.</p>
+                    <p>Mathematical logic and cryptography represent another area of my interests. I enjoy solving complex problems and analyzing algorithms, which makes working in IT even more fascinating.</p>
                 </div>
                 
                 <div class="page-section">
-                    <h2>Future</h2>
-                    <p>У майбутньому я планую продовжити розвиватися в сфері інформаційних технологій, зосередившись на бізнес-аналітиці та управлінні проектами. Мені цікаво поєднувати технічні знання з розумінням бізнес-процесів для створення ефективних рішень.</p>
-                    <p>Також я маю намір продовжити вивчення іноземних мов та, можливо, отримати досвід роботи в міжнародній компанії, де зможу застосувати всі свої навички та знання.</p>
+                    <h2><i class="fas fa-star floral-icon"></i>Future Aspirations</h2>
+                    <p>In the future, I plan to continue developing in the field of information technology, focusing on business analytics and project management. I'm interested in combining technical knowledge with business process understanding to create effective solutions.</p>
+                    <p>I also intend to continue studying foreign languages and potentially gain experience working in an international company where I can apply all my skills and knowledge.</p>
                 </div>
             </div>
         </div>
@@ -364,7 +396,7 @@
                     <li><a href="resume.html">Resume</a></li>
                     <li><a href="index.html#contact">Contacts</a></li>
                 </ul>
-                <div class="copyright">© 2025 All rights</div>
+                <div class="copyright">© 2025 All rights reserved</div>
             </div>
         </div>
     </footer>
