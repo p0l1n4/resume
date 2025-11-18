@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polina Simenko</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #ffffff;
-            --accent-color: #ff3366;
-            --secondary-text: #888888;
-            --border-color: #333333;
+            --bg-color: #fff5f7;
+            --bg-gradient: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+            --text-color: #5a3d4e;
+            --accent-color: #e6a4b4;
+            --accent-dark: #c86b85;
+            --secondary-text: #8a6b7a;
+            --border-color: #f0d4dc;
+            --card-bg: rgba(255, 255, 255, 0.8);
         }
         
         * {
@@ -21,11 +25,11 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--bg-color);
+            font-family: 'Crimson Text', serif;
+            background: var(--bg-gradient);
             color: var(--text-color);
             line-height: 1.6;
-            font-weight: 300;
+            font-weight: 400;
             overflow-x: hidden;
         }
         
@@ -42,7 +46,7 @@
             width: 100%;
             padding: 30px 0;
             z-index: 1000;
-            background-color: rgba(10, 10, 10, 0.9);
+            background-color: rgba(255, 245, 247, 0.9);
             backdrop-filter: blur(10px);
         }
         
@@ -53,8 +57,9 @@
         }
         
         .logo {
-            font-size: 18px;
-            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
             letter-spacing: 1px;
         }
         
@@ -72,14 +77,30 @@
         .nav-links a {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 300;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
         }
         
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--accent-dark);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
         }
         
         .menu-toggle {
@@ -94,25 +115,30 @@
             display: flex;
             align-items: center;
             padding: 100px 0 50px;
+            position: relative;
         }
         
         .hero-content {
             max-width: 800px;
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
-            font-size: clamp(36px, 6vw, 64px);
-            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 80px);
+            font-weight: 500;
             line-height: 1.1;
             margin-bottom: 20px;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
         }
         
         .hero p {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--secondary-text);
             margin-bottom: 40px;
             max-width: 500px;
+            font-style: italic;
         }
         
         .btn {
@@ -129,6 +155,20 @@
         
         .btn:hover {
             border-bottom-color: var(--accent-color);
+            color: var(--accent-dark);
+        }
+        
+        .floral-decoration {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.7;
+            z-index: 1;
+        }
+        
+        .floral-decoration i {
+            font-size: 200px;
             color: var(--accent-color);
         }
         
@@ -149,8 +189,9 @@
         }
         
         .contact-text {
+            font-family: 'Playfair Display', serif;
             font-size: 36px;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.3;
             margin-bottom: 40px;
         }
@@ -172,7 +213,7 @@
         
         .social-link:hover {
             border-bottom-color: var(--accent-color);
-            color: var(--accent-color);
+            color: var(--accent-dark);
         }
         
         .contact-form {
@@ -193,7 +234,7 @@
         .form-group input,
         .form-group textarea {
             width: 100%;
-            background: transparent;
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             padding: 12px 16px;
             color: var(--text-color);
@@ -236,7 +277,7 @@
         
         .submit-btn:hover {
             border-color: var(--accent-color);
-            color: var(--accent-color);
+            color: var(--accent-dark);
         }
         
         /* Футер */
@@ -254,6 +295,7 @@
         }
         
         .footer-logo {
+            font-family: 'Playfair Display', serif;
             font-size: 18px;
             font-weight: 400;
             letter-spacing: 1px;
@@ -273,7 +315,7 @@
         }
         
         .footer-links a:hover {
-            color: var(--accent-color);
+            color: var(--accent-dark);
         }
         
         .copyright {
@@ -294,6 +336,10 @@
             
             .contact-text {
                 font-size: 28px;
+            }
+            
+            .floral-decoration {
+                display: none;
             }
         }
         
@@ -370,12 +416,15 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>I AM POLINA SIMENKO</h1>
-                <p>Навчаюсь на 3 курсі Херсонського державного університету. Поєдную технічну освіту з інтересами до дизайну та іноземних мов.</p>
+                <h1>Polina Simenko</h1>
+                <p>Information Systems & Technology student with a passion for design, languages, and elegant solutions.</p>
                 <a href="resume.html" class="btn">
-                    Моє резюме
+                    View My Resume
                     <i class="fas fa-arrow-right"></i>
                 </a>
+            </div>
+            <div class="floral-decoration">
+                <i class="fas fa-heart"></i>
             </div>
         </div>
     </section>
@@ -385,8 +434,8 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
-                    <p class="contact-text">Text me</p>
-                    <p>Завжди відкрита до співпраці та нових можливостей!</p>
+                    <p class="contact-text">Let's Connect</p>
+                    <p>Always open to collaboration and new opportunities!</p>
                     <div class="social-links">
                         <a href="https://github.com/p0l1n4" class="social-link">GitHub</a>
                         <a href="https://www.instagram.com/polline_ko/" class="social-link">Instagram</a>
@@ -397,27 +446,27 @@
                     <form id="contactForm">
                         <div class="name-fields">
                             <div class="form-group">
-                                <label for="firstName">Ім'я (обов'язково)</label>
+                                <label for="firstName">First Name (required)</label>
                                 <input type="text" id="firstName" name="firstName" required>
                             </div>
                             <div class="form-group">
-                                <label for="lastName">Прізвище</label>
+                                <label for="lastName">Last Name</label>
                                 <input type="text" id="lastName" name="lastName">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email (обов'язково)</label>
+                            <label for="email">Email (required)</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Тема (обов'язково)</label>
+                            <label for="subject">Subject (required)</label>
                             <input type="text" id="subject" name="subject" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Повідомлення (обов'язково)</label>
+                            <label for="message">Message (required)</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Надіслати повідомлення</button>
+                        <button type="submit" class="submit-btn">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -434,7 +483,7 @@
                     <li><a href="resume.html">Resume</a></li>
                     <li><a href="#contact">Contacts</a></li>
                 </ul>
-                <div class="copyright">© 2025 All rights</div>
+                <div class="copyright">© 2025 All rights reserved</div>
             </div>
         </div>
     </footer>
@@ -462,7 +511,7 @@
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                alert('Дякую за повідомлення! Я з вами зв\'яжуся.');
+                alert('Thank you for your message! I will get back to you soon.');
                 this.reset();
             });
         }
